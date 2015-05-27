@@ -18,6 +18,7 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
         """Send response headers"""
         self.send_response(200)
         self.send_header("content-type", "text/html;charset=utf-8")
+        self.send_header("access-control-allow-origin", "*")
         self.end_headers()
 
     def do_GET(self):
